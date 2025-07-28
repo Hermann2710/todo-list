@@ -1,9 +1,8 @@
-import { Todo } from "../types"
+import useTodoContext from "../contexts/todo-context"
 import TodoItem from "./todo-item"
 
-const todos: Todo[] = [{ id: "yo", name: "yo", complete: false }]
-
 export default function TodoList() {
+  const { todos } = useTodoContext()
   return (
     <div>
       {todos.map((todo) => (

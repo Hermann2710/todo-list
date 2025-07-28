@@ -10,7 +10,11 @@ interface TodoContextType {
 
 export const TodoContext = createContext<TodoContextType | undefined>(undefined)
 
-export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
+export const TodoContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode
+}) => {
   const [todos, setTodos] = useState<Todo[]>([])
 
   const addTodo = (todo: Todo) => setTodos((prev) => [...prev, todo])
