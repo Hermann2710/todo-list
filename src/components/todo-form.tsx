@@ -13,6 +13,8 @@ export default function TodoForm({ className }: { className?: string }) {
       id: crypto.randomUUID(),
       name: name,
       complete: false,
+      createdAt: new Date().toLocaleDateString(),
+      updatedAt: new Date().toLocaleDateString(),
     }
     addTodo(todo)
     setName("")
@@ -32,10 +34,10 @@ export default function TodoForm({ className }: { className?: string }) {
           onChange={(e) => setName(e.target.value)}
           autoComplete='off'
           placeholder='Nom de la tâche'
-          className='px-5 py-2 flex-1 focus:outline-none'
+          className='px-3 py-2 flex-1 focus:outline-none'
         />
         <button
-          className='bg-orange-500 hover:bg-orange-600 px-5 text-white font-medium cursor-pointer disabled:cursor-not-allowed disabled:bg-orange-300'
+          className='bg-orange-500 rounded-2xl hover:bg-orange-600 px-5 text-white font-medium cursor-pointer disabled:cursor-not-allowed disabled:bg-orange-300'
           type='submit'
           disabled={name.length < 3}
         >

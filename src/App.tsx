@@ -5,7 +5,7 @@ import TodoList from "./components/todo-list"
 export default function App() {
   return (
     <div className='h-screen bg-gray-300 p-10'>
-      <div className='bg-white max-w-2xl mx-auto p-3 rounded-lg shadow-lg'>
+      <div className='bg-white max-w-2xl mx-auto px-5 py-2 rounded-lg shadow-lg'>
         <h1 className='flex items-center gap-2 text-2xl font-bold mb-4'>
           To-Do List <ListTodo size={30} className='text-orange-500' />
         </h1>

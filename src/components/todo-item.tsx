@@ -30,7 +30,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
           {todo.name}
         </span>
       </div>
-      <button className='text-red-500' onClick={handleDelete}>
+      <button className='text-red-500 cursor-pointer' onClick={handleDelete}>
         <Trash />
       </button>
     </div>

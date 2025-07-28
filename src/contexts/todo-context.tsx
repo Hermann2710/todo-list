@@ -22,7 +22,15 @@ export const TodoContextProvider = ({
     setTodos((prev) => prev.filter((t) => t.id !== id))
   const toggleTodo = (id: string) =>
     setTodos((prev) =>
-      prev.map((t) => (t.id === id ? { ...t, complete: !t.complete } : t))
+      prev.map((t) =>
+        t.id === id
+          ? {
+              ...t,
+              complete: !t.complete,
+              updatedAt: new Date().toLocaleDateString(),
+            }
+          : t
+      )
     )
 
   useEffect(() => {
