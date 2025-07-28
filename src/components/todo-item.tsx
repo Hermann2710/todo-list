@@ -17,12 +17,20 @@ export default function TodoItem({ todo }: TodoItemProps) {
   }
 
   return (
-    <div>
-      <button onClick={handleToggle}>
-        {todo.complete ? <Check /> : <Square />}
-      </button>
-      <span>{todo.name}</span>
-      <button onClick={handleDelete}>
+    <div className='flex items-center justify-between'>
+      <div className='flex-1 flex items-center gap-2'>
+        <button className='cursor-pointer' onClick={handleToggle}>
+          {todo.complete ? (
+            <Check className='text-orange-500' />
+          ) : (
+            <Square className='text-gray-500' />
+          )}
+        </button>
+        <span className={todo.complete ? "line-through" : undefined}>
+          {todo.name}
+        </span>
+      </div>
+      <button className='text-red-500' onClick={handleDelete}>
         <Trash />
       </button>
     </div>

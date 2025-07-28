@@ -1,4 +1,3 @@
-import { Plus } from "lucide-react"
 import { FormEvent, useState } from "react"
 import useTodoContext from "../contexts/todo-context"
 import { Todo } from "../types"
@@ -21,7 +20,10 @@ export default function TodoForm({ className }: { className?: string }) {
 
   return (
     <div className={className}>
-      <form className='flex items-center p-2' onSubmit={handleSubmit}>
+      <form
+        className='flex bg-gray-100 rounded-2xl overflow-hidden'
+        onSubmit={handleSubmit}
+      >
         <input
           type='text'
           name='name'
@@ -30,10 +32,10 @@ export default function TodoForm({ className }: { className?: string }) {
           onChange={(e) => setName(e.target.value)}
           autoComplete='off'
           placeholder='Nom de la tâche'
-          className='flex-1 border'
+          className='px-5 py-2 flex-1 focus:outline-none'
         />
         <button
-          className='bg-green-500 text-white px-3 py-1 font-medium rounded-r-lg'
+          className='bg-orange-500 hover:bg-orange-600 px-5 text-white font-medium cursor-pointer disabled:cursor-not-allowed disabled:bg-orange-300'
           type='submit'
           disabled={name.length < 3}
         >
