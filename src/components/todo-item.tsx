@@ -1,4 +1,4 @@
-import { CheckCheck, Square, Trash } from "lucide-react"
+import { Check, Square, Trash } from "lucide-react"
 import { Todo } from "../types"
 import useTodoContext from "../contexts/todo-context"
 
@@ -19,7 +19,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
   return (
     <div>
       <button onClick={handleToggle}>
-        {todo.complete ? <CheckCheck /> : <Square />}
+        {todo.complete ? <Check /> : <Square />}
       </button>
       <span>{todo.name}</span>
       <button onClick={handleDelete}>

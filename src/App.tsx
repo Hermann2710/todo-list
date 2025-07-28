@@ -3,11 +3,9 @@ import TodoList from "./components/todo-list"
 
 export default function App() {
   return (
-    <div>
-      <div>
+    <div className='h-screen bg-gray-300 p-10'>
+      <div className='bg-white max-w-2xl self-center'>
         <TodoForm />
-      </div>
-      <div>
         <TodoList />
       </div>
     </div>

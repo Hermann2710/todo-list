@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react"
+import React, { createContext, useContext, useEffect, useState } from "react"
 import { Todo } from "../types"
 
 interface TodoContextType {
@@ -24,6 +24,19 @@ export const TodoContextProvider = ({
     setTodos((prev) =>
       prev.map((t) => (t.id === id ? { ...t, complete: !t.complete } : t))
     )
+
+  useEffect(() => {
+    if (todos.length > 0) {
+      localStorage.setItem("todos", JSON.stringify(todos))
+    }
+  }, [todos])
+
+  useEffect(() => {
+    const saved = localStorage.getItem("todos")
+    if (saved) {
+      setTodos(JSON.parse(saved) as Todo[])
+    }
+  }, [])
 
   return (
     <TodoContext.Provider value={{ todos, addTodo, removeTodo, toggleTodo }}>
