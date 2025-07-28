@@ -1,7 +1,15 @@
+import TodoForm from "./components/todo-form"
+import TodoList from "./components/todo-list"
+
 export default function App() {
   return (
     <div>
-      <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+      <div>
+        <TodoForm />
+      </div>
+      <div>
+        <TodoList />
+      </div>
     </div>
   )
 }
